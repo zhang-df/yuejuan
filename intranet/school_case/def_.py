@@ -14,7 +14,9 @@ import datetime
 class Browser_():
     # 定义浏览器的构造函数
     def __init__(self):
-        self.driver = webdriver.Chrome()
+        option = webdriver.ChromeOptions()
+        option.add_experimental_option("excludeSwitches", ['enable-automation'])
+        self.driver = webdriver.Chrome(options=option)
         self.driver.maximize_window()
 
         # 循环等待获取元素
@@ -183,3 +185,6 @@ class Browser_():
         t = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
         self.driver.get_screenshot_as_file(
             r"D:\PyCharm\File\printscreen/%s.png" % t)
+
+
+dr = Browser_()

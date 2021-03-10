@@ -13,7 +13,9 @@ import datetime
 class Browser_():
         # 定义浏览器的构造函数
     def __init__(self):
-        self.driver = webdriver.Chrome()
+        option = webdriver.ChromeOptions()
+        option.add_experimental_option("excludeSwitches", ['enable-automation'])
+        self.driver = webdriver.Chrome(options=option)
         self.driver.maximize_window()
 
         # 循环等待获取元素
