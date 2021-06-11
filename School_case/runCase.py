@@ -17,7 +17,7 @@ class SchoolCase(unittest.TestCase):
     def test_0(self):
         """执行开始程序"""
         sleep(1)
-        print("执行开始，祈祷不报错".center(scale // 2, "-"))
+        print("执行开始，祈祷不报错啊".center(scale // 2, "-"))
 
     def test_1(self):
         """任务构建程序"""
